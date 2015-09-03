@@ -32,7 +32,7 @@
         [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
         [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
       ],
-      "iso_url": "https://download.fedoraproject.org/pub/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Server-netinst-x86_64-22.iso",
+      "iso_url": "http://mirror.nl.leaseweb.net/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Workstation-netinst-x86_64-22.iso",
       "iso_checksum": "c9d22e708b21336582b19b336b7063fc4b882be4cf96d4d0693de07bd66c25e8",
       "iso_checksum_type": "sha256",
       "ssh_username": "vagrant",
