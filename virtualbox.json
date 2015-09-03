@@ -1,0 +1,48 @@
+{
+  "variables": {
+    "version": "{{env `VERSION`}}"
+  },
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "sudo {{.Vars}} sh {{.Path}}",
+      "scripts": [
+        "scripts/vagrant.sh",
+        "scripts/vmtools.sh",
+        "scripts/cleanup.sh",
+        "scripts/zerodisk.sh"
+      ]
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "output": "build/Fedora-22-x86_64-{{.Provider}}.box"
+    }
+  ],
+  "builders": [
+    {
+      "type": "virtualbox-iso",
+      "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
+      "guest_additions_mode": "attach",
+      "guest_additions_sha256": "974063ca9c7bde796dd77ba55d35583dc5d8bc27d53a6bfd81ae206978b133e2",
+      "guest_os_type": "RedHat_64",
+      "headless": "true",
+      "vboxmanage": [
+        [ "modifyvm", "{{.Name}}", "--memory", "512" ],
+        [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
+      ],
+      "iso_url": "https://download.fedoraproject.org/pub/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Live-Workstation-x86_64-22-3.iso",
+      "iso_checksum": "615abfc89709a46a078dd1d39638019aa66f62b0ff8325334f1af100551bb6cf",
+      "iso_checksum_type": "sha256",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "10m",
+      "boot_command": [ "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>" ],
+      "disk_size": "32768",
+      "hard_drive_interface": "sata",
+      "http_directory": "http",
+      "shutdown_command": "sudo /sbin/halt -p"
+    }
+  ]
+}
