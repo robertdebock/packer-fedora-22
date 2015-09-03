@@ -26,11 +26,11 @@
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "guest_additions_mode": "attach",
       "guest_additions_sha256": "974063ca9c7bde796dd77ba55d35583dc5d8bc27d53a6bfd81ae206978b133e2",
-      "guest_os_type": "RedHat_64",
-      "headless": "true",
+      "guest_os_type": "Fedora_64",
+      "headless": "False",
       "vboxmanage": [
-        [ "modifyvm", "{{.Name}}", "--memory", "1024" ],
-        [ "modifyvm", "{{.Name}}", "--cpus", "1" ]
+        [ "modifyvm", "{{.Name}}", "--memory", "2048" ],
+        [ "modifyvm", "{{.Name}}", "--cpus", "2" ]
       ],
       "iso_url": "https://download.fedoraproject.org/pub/fedora/linux/releases/22/Workstation/x86_64/iso/Fedora-Live-Workstation-x86_64-22-3.iso",
       "iso_checksum": "615abfc89709a46a078dd1d39638019aa66f62b0ff8325334f1af100551bb6cf",
