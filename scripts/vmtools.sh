@@ -6,6 +6,9 @@ dnf -y install epel-release
 echo "Installing dkms and bzip2"
 dnf -y install dkms bzip2
 
+echo "Installing kernel-devel"
+dnf -y install kernel-devel
+
 echo "Installing group Development Tools."
 dnf -y groupinstall 'Development Tools'
 
