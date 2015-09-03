@@ -24,4 +24,7 @@ chmod +x /etc/rc.d/rc.local
 rm -f /etc/ssh/ssh_host_*
 rm -f /var/lib/NetworkManager/*
 rm -rf /tmp/*
-yum -y clean all
+dnf -y clean all
+
+userdel -R packer
+rm /etc/sudoers.d/packer

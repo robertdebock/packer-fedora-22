@@ -1,13 +1,13 @@
 #!/bin/sh
 
 echo "Installing epel-release."
-yum -y install epel-release
+dnf -y install epel-release
 
 echo "Installing dkms"
-yum -y install dkms
+dnf -y install dkms
 
 echo "Installing group Development Tools."
-yum -y groupinstall 'Development Tools'
+dnf -y groupinstall 'Development Tools'
 
 echo "Mounting Virtual Box additional guest tools."
 mount /dev/sr1 /mnt

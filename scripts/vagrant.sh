@@ -1,2 +1,3 @@
 #!/bin/bash
-date > /etc/vagrant_box_build_time
+useradd vagrant
+echo "vagrant" | passwd vagrant --stdin
