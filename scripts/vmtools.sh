@@ -7,7 +7,7 @@ echo "Installing dkms and bzip2"
 dnf -y install dkms bzip2
 
 echo "Installing kernel-devel"
-dnf -y install kernel-devel
+dnf -y install kernel-devel-$(uname -r)
 
 echo "Installing group Development Tools."
 dnf -y groupinstall 'Development Tools'
