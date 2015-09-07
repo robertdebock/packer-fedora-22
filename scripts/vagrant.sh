@@ -1,5 +1,5 @@
 #!/bin/bash
-useradd vagrant
+useradd -s vagrant
 echo "vagrant" | passwd vagrant --stdin
 
 echo 'vagrant             ALL=(ALL)   NOPASSWD: ALL' >> /etc/sudoers.d/vagrant
