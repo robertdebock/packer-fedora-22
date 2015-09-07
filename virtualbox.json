@@ -37,7 +37,7 @@
       "iso_checksum_type": "sha256",
       "ssh_username": "packer",
       "ssh_password": "packer",
-      "ssh_wait_timeout": "20m",
+      "ssh_wait_timeout": "30m",
       "boot_command": [ "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>" ],
       "disk_size": "32768",
       "hard_drive_interface": "sata",
