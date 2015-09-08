@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 useradd -s vagrant
 echo "vagrant" | passwd vagrant --stdin
 
